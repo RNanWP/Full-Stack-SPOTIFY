@@ -1,0 +1,21 @@
+/* Reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+   background-color: black;
+   color: white
+}
+
+a{
+   color: inherit;
+}
+
+/* Header */
+
+.header{
+   padding: 20px;
+}
