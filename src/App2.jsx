@@ -12,12 +12,15 @@
 
 // Nomeação de classe em CSS
 //    Metodologia BEM
-//    Blocka
+//    Blocks
 //    Elements
 //    Modifiers
 //    bloco__elemento--modificador
+//    header
 //    header__link
 //    header--link--small
+//    Nomes compostos são separados por -
+
 
 // tag vazia em React se chama Fragment ou Fragmento
 
@@ -36,3 +39,6 @@
 //    Kebabe-case 
 
 // API signitica Application Programing Interface
+
+// VH = height: 100vh; é view port hight, usado para destacar a tela inteira
+// Para dispositivos moveis SVH
