@@ -59,3 +59,70 @@ a {
    text-decoration: underline;
 
 }
+
+/* SingleItem */
+
+.single-item{
+   padding: 25px 16px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   border-radius: var(--border-radius-1);
+   align-items: center;
+   transition: background-color var(--transition-function)
+   var(--transition-function);
+}
+
+.single-item:hover{
+   background-color: var(--green-900);
+   text-decoration: none;
+}
+
+.single-item:hover .single-item__icon{
+   opacity: 100%;
+   transform:translateY(0);
+}
+
+.single-item:hover .single-item__2lines{
+   -webkit-line-clamp: 10;
+   line-clamp: 10;
+}
+
+.single-item__div-image-button{
+   position: relative;
+}
+
+.single-item__div-image{
+   width: 140px;
+   height: 140px;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+}
+
+.single-item__icon{
+   position: absolute;
+   font-size: 50px;
+   right: 7.5px;
+   bottom: 7.5px;
+   color: var(--green-400);
+   opacity: 0;
+   transform: translateY(100%);
+   transition-timing-function: var(--transition-function);
+   transition-duration: var(--transition-duraction);
+   transition-property: opacity,transform;
+}
+
+.single-item__icon--artist{
+   position: fixed;
+   opacity: 1;
+   transform: translateY(0);
+   right: 25px;
+   bottom: 25px;
+}
+
+.single-item__title{
+   font-weight: 600;
+}
