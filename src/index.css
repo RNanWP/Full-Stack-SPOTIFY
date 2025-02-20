@@ -15,6 +15,13 @@
   --green-950: hsl(141deg 75% 5%);
   --green-1000: hsl(141deg 75% 2.5%);
   --green-1000-50: hsl(141deg 75% 2.5% / 50%);
+
+  --transition-duraction: 200ms;
+  --transition-function: ease;
+
+  --border-radius-s: 5px;
+  --border-radius-m: 10px;
+  --border-radius-1: 15px;
 }
 
 /* Reset*/
@@ -104,9 +111,9 @@ a {
   gap: 10px;
   border-radius: var(--border-radius-1);
   align-items: center;
-  transition: background-color ease 250ms;
-  /* transition: background-color var(--transition-function)
-   var(--transition-function); */
+  /* transition: background-color ease 250ms; */
+  transition: background-color var(--transition-function)
+    var(--transition-function);
   border-radius: 15px;
   align-items: center;
 }
@@ -148,10 +155,10 @@ a {
   color: var(--green-400);
   opacity: 0;
   transform: translateY(100%);
-  transition-timing-function: ease;
-  transition-duration: 250ms;
-  /* transition-timing-function: var(--transition-function);
-   transition-duration: var(--transition-duraction); */
+  /* transition-timing-function: ease;
+  transition-duration: 250ms; */
+  transition-timing-function: var(--transition-function);
+  transition-duration: var(--transition-duraction);
   transition-property: opacity, transform;
 }
 
