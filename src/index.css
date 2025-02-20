@@ -1,3 +1,24 @@
+:root{
+   --green-50: hsl(141deg 75% 90%);
+   --green-100: hsl(141deg 75% 85%);
+   --green-100-20: hsl(141deg 75% 80% / 25%);
+   --green-200: hsl(141deg 75% 70%);
+   --green-300: hsl(141deg 75% 60%);
+   --green-400: hsl(141, 75%, 50%);
+   --green-400-25: hsl(141deg 75% 90%);
+   --green-500: hsl(141deg 75% 45%);
+   --green-600: hsl(141deg 75% 35%);
+   --green-700: hsl(141deg 75% 25%);
+   --green-800: hsl(141deg 75% 15%);
+   --green-800-85: hsl(141deg 75% 15% / 85%);
+   --green-900: hsl(141deg 75% 10%);
+   --green-950: hsl(141deg 75% 5%);
+   --green-1000: hsl(141deg 75% 2.5%);
+   --green-1000-50: hsl(141deg 75% 2.5% / 50%);
+   
+
+}
+
 /* Reset*/
 * {
   margin: 0;
@@ -6,7 +27,7 @@
 }
 
 body {
-   background-color: black;
+   background-color: var(--green-1000);
    font-family: "Montserrat", sans-serif;
    color: white
 
@@ -45,14 +66,32 @@ a {
    margin: 0 10px 10px;
    border-radius: 15px;
    flex: 1;
-   background-image: linear-gradient(to bottom, #062d14, black);
-
+   background-image: linear-gradient(to bottom, 
+   var(--green-900), 
+   var(--green-1000)
+   );
+   display: flex;
+   flex-direction: column;
+   gap: 39px;
 }
 
-.main__texts{
+/* ItemList */
+
+.item-list{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.item-list__header{
    display: flex;
    align-items: center;
    justify-content: space-between;
+}
+
+.item-list__container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
 }
 
 .main__link:hover {
@@ -69,8 +108,11 @@ a {
    gap: 10px;
    border-radius: var(--border-radius-1);
    align-items: center;
-   transition: background-color var(--transition-function)
-   var(--transition-function);
+   transition: background-color ease 250ms;
+   /* transition: background-color var(--transition-function)
+   var(--transition-function); */
+   border-radius: 15px;
+   align-items: center;
 }
 
 .single-item:hover{
@@ -110,8 +152,10 @@ a {
    color: var(--green-400);
    opacity: 0;
    transform: translateY(100%);
-   transition-timing-function: var(--transition-function);
-   transition-duration: var(--transition-duraction);
+   transition-timing-function: ease;
+   transition-duration: 250ms;
+   /* transition-timing-function: var(--transition-function);
+   transition-duration: var(--transition-duraction); */
    transition-property: opacity,transform;
 }
 

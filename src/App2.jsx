@@ -42,3 +42,9 @@
 
 // VH = height: 100vh; é view port hight, usado para destacar a tela inteira
 // Para dispositivos moveis SVH
+
+// GAP = espaço entre os elementos filhos de um elemento Conteiner
+
+// FR = fração. Usado para ajudar ajustar o tamanho dos componentes no CSS (1fr)
+
+// auto-fit, minmax expandirá os itens da grade para preencher o espaço disponível | EX: grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
