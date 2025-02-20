@@ -13,7 +13,8 @@ const Main = () => {
           </a>
         </div>
 
-        <div className="single-item__container">
+{/* Artista containers */}
+        <div className="item-list__container">
           <div className="single-item">
             <div className="single-item__div-image-button">
               <div className="single-item__div-image">
@@ -140,7 +141,7 @@ const Main = () => {
           </div>
         </div>
       </div>
-
+{/* Musica containers */}
       <div className="item-list">
         <div className="item-list__header">
           <h2>Músicas populares</h2>
@@ -149,7 +150,7 @@ const Main = () => {
           </a>
         </div>
 
-        <div className="single-item__container">
+        <div className="item-list__container">
           <div className="single-item">
             <div className="single-item__div-image-button">
               <div className="single-item__div-image">
