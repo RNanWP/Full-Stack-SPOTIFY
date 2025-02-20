@@ -25,7 +25,9 @@
 // tag vazia em React se chama Fragment ou Fragmento
 
 // Componente recebem "props"
+
 // CTRL + ; = Comentário em qualquer linguagem
+
 // ALT + 124 = Barra Vertical ||
 
 // Usando função em JS "ex: useLocation()", sempre usilizando o nome da função e logo os parenteses
