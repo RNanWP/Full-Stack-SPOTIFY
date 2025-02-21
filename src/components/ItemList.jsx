@@ -13,28 +13,11 @@ const ItemList = ({ title, items }) => {
       </div>
 
       <div className="item-list__container">
-        {items === 5 ? (
-          <>
+        {Array(items)
+          .fill()
+          .map(() => (
             <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-          </>
-        ) : (
-          <>
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-            <SingleItem />
-          </>
-        )}
+          ))}
       </div>
     </div>
   );
