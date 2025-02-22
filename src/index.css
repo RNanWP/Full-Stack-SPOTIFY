@@ -51,15 +51,66 @@ a {
 /* Header */
 
 .header {
-  padding: 10px 20px;
+  padding: 7px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
-.header__link:hover {
-  text-decoration: underline;
+.header img {
+  width: 35px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
+
+/* Efeito de hover */
+.header img:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.2);
+}
+
+/* HEADER - Título com hover */
+.header__link h1 {
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.header__link:hover h1 {
+  color: var(--green-200);
+}
+
+/* Links de navegação */
+.header__link {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+}
+
+.header__link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--green-200);
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.header__link:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+/* .header__link:hover {
+  text-decoration: underline;
+} */
 
 /* Main */
 
@@ -99,6 +150,10 @@ a {
 }
 
 .main__link:hover {
+  text-decoration: underline;
+}
+
+.item-list__link:hover{
   text-decoration: underline;
 }
 
