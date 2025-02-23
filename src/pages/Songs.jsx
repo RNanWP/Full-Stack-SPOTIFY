@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Songs = () => {
-  return (
-    <div>Songs</div>
-  )
-}
+  return <div>Songs</div>;
+};
 
-export default Songs
+export default Songs;

@@ -34,7 +34,7 @@
 body {
   background-color: var(--green-1000);
   font-family: "Montserrat", sans-serif;
-  color: white;
+  color: var(--green-50);
 }
 
 a {
@@ -42,14 +42,19 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 #root {
+  font-family: "Montserrat", sans-serif;
   height: 100svh;
   display: flex;
   flex-direction: column;
 }
 
 /* Header */
-
 .header {
   padding: 7px 20px;
   display: flex;
@@ -113,7 +118,6 @@ a {
 } */
 
 /* Main */
-
 .main {
   background-color: brown;
   padding: 20px;
@@ -130,8 +134,20 @@ a {
   gap: 39px;
 }
 
-/* ItemList */
+/* Footer */
+.footer {
+  position: relative;
+  width: 100%;
+  background: var(--green-200);
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+
+/* ItemList */
 .item-list {
   display: flex;
   flex-direction: column;
