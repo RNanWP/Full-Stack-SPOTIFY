@@ -5,6 +5,7 @@ import Artists from "./pages/Artist";
 import Artist from "./pages/Artist";
 import Songs from "./pages/Artist";
 import Song from "./pages/Artist";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/songs" element={<Songs />} />
         <Route path="/song/:id" element={<Song />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
