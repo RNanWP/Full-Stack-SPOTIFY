@@ -3,39 +3,60 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faGithub,
-  faDiscord,
   faInstagram,
-  faTwitch,
 } from "@fortawesome/free-brands-svg-icons";
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons/faAddressCard";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-icons">
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/renanodev" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/RNanWP" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/_rnn.oliveira" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-          </li>
-          <li>
-            <a href="https://rnanwp-meu-site.netlify.app/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faAddressCard} />
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul className="social-icons">
+        <li>
+          <a
+            href="https://www.linkedin.com/in/renanodev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/RNanWP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/_rnn.oliveira"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://rnanwp-meu-site.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faAddressCard} />
+          </a>
+        </li>
+      </ul>
+
+      <ul className="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Time</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+
 
       {/* <div className="footer-container">
         {/* Logo e Nome */}
