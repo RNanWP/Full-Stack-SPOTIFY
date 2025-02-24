@@ -68,14 +68,12 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-/* Efeito de hover */
 .header img:hover {
   transform: scale(1.2);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   filter: brightness(1.2);
 }
 
-/* HEADER - Título com hover */
 .header__link h1 {
   font-size: 2rem;
   transition: color 0.3s ease;
@@ -85,7 +83,6 @@ img {
   color: var(--green-200);
 }
 
-/* Links de navegação */
 .header__link {
   position: relative;
   display: inline-block;
@@ -109,10 +106,6 @@ img {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
-/* .header__link:hover {
-  text-decoration: underline;
-} */
 
 /* Main */
 .main {
@@ -143,7 +136,6 @@ img {
   flex-direction: column;
   background-color: var(--green-700);
 }
-/* #3586ff */
 
 .social-icons,
 .menu {
@@ -248,54 +240,6 @@ img {
     background-position-x: 1000px;
   }
 }
-/* .footer-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.footer-logo h2{
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.footer-nav ul{
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-}
-
-.footer-nav ul li a{
-  color: var(--green-50);
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s ease-in-out;
-}
-
-.footer-nav ul li a:hover{
-  color: var(--green-600);
-}
-
-.footer-social a {
-  color: var(--green-50);
-  font-size: 20px;
-  gap: 20px;
-  display: flex;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.footer-social a:hover{
-  transform: scale(1.2);
-  color: var(--green-600);
-}
-
-.footer-copyright{
-  margin-top: 15px;
-  font-size: 14px;
-  color: #bbb;
-} */
 
 /* ItemList */
 .item-list {
@@ -332,7 +276,6 @@ img {
   gap: 10px;
   border-radius: var(--border-radius-1);
   align-items: center;
-  /* transition: background-color ease 250ms; */
   transition: background-color var(--transition-function)
     var(--transition-function);
   border-radius: 15px;
@@ -376,8 +319,6 @@ img {
   color: var(--green-400);
   opacity: 0;
   transform: translateY(100%);
-  /* transition-timing-function: ease;
-  transition-duration: 250ms; */
   transition-timing-function: var(--transition-function);
   transition-duration: var(--transition-duraction);
   transition-property: opacity, transform;
