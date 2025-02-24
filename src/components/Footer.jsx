@@ -57,6 +57,7 @@ const Footer = () => {
         <li><a href="#">Contato</a></li>
       </ul>
 
+<p>Copyright &#169; 2025 Renan Oliveira | All Rights Reserved.</p>
 
       {/* <div className="footer-container">
         {/* Logo e Nome */}
