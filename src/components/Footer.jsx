@@ -10,7 +10,7 @@ import { faAddressCard } from "@fortawesome/free-solid-svg-icons/faAddressCard";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="wave">
+      <div className="waves">
         <div className="wave" id="wave1"></div>
         <div className="wave" id="wave2"></div>
         <div className="wave" id="wave3"></div>
@@ -64,7 +64,7 @@ const Footer = () => {
         <li><a href="#">Contato</a></li>
       </ul>
 
-<p>Copyright &#169; 2025 Renan Oliveira | All Rights Reserved.</p>
+<p className="footer-p">Copyright &#169; 2025 Renan Oliveira | All Rights Reserved.</p>
 
       {/* <div className="footer-container">
         {/* Logo e Nome */}
