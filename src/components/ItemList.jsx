@@ -5,8 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 const ItemList = ({ title, items, itemsArray, path, idPath }) => {
   // console.log(items);
 
-const pathname = useLocation().pathname;
-console.log(pathname);
+const {pathname} = useLocation();
+const isHome = pathname ==='/';
 
   return (
     <div className="item-list">
