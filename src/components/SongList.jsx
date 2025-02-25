@@ -5,6 +5,10 @@ const SongList = () => {
   return (
     <div className="song-list">
       <SongItem />
+      <SongItem />
+      <SongItem />
+      <SongItem />
+      <SongItem />
     </div>
   );
 };
