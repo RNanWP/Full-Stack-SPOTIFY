@@ -125,7 +125,7 @@ img {
 }
 
 /* Footer */
-.footer {
+/* .footer {
   position: relative;
   width: 100%;
   min-height: 150px;
@@ -239,7 +239,7 @@ img {
   100% {
     background-position-x: 1000px;
   }
-}
+} */
 
 /* ItemList */
 .item-list {

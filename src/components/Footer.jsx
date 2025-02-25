@@ -66,6 +66,8 @@ const Footer = () => {
 
 <p className="footer-p">Copyright &#169; 2025 Renan Oliveira | All Rights Reserved.</p>
 
+{/* -------------------------------------- */}
+
       {/* <div className="footer-container">
         {/* Logo e Nome */}
       {/* <div className="footer-logo">
@@ -97,6 +99,8 @@ const Footer = () => {
       {/* <div className="footer-copyright">
           &copy; {new Date().getFullYear()} RNanWP. Todos os direitos reservados
         </div> */}
+
+{/* -------------------------------------- */}
     </footer>
   );
 };
