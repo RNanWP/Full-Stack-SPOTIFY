@@ -1,10 +1,10 @@
 import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Artists from "./pages/Artist";
+import Artists from "./pages/Artists";
 import Artist from "./pages/Artist";
-import Songs from "./pages/Artist";
-import Song from "./pages/Artist";
+import Songs from "./pages/Songs";
+import Song from "./pages/Song";
 import Footer from "./components/Footer";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         <Route path="/songs" element={<Songs />} />
         <Route path="/song/:id" element={<Song />} />
       </Routes>
+
       <Footer />
     </BrowserRouter>
   );

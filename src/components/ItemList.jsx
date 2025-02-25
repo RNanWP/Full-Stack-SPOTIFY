@@ -1,9 +1,12 @@
 import React from "react";
 import SingleItem from "./SingleItem";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ItemList = ({ title, items, itemsArray, path, idPath }) => {
   // console.log(items);
+
+const pathname = useLocation().pathname;
+console.log(pathname);
 
   return (
     <div className="item-list">
