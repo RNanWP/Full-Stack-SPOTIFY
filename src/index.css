@@ -175,7 +175,7 @@ img {
 .menu li a:hover {
   opacity: 1;
 }
-.footer-p{
+.footer-p {
   color: white;
   text-align: center;
   margin-top: 10px;
@@ -183,7 +183,7 @@ img {
   font-size: 1.1em;
 }
 
-.wave{
+.wave {
   position: absolute;
   top: -100px;
   left: 0;
@@ -191,52 +191,52 @@ img {
   height: 100px;
   background: url(/src/assets/footer/wave.png);
   background-size: 1000px 100px;
-  filter: invert(85%) sepia(50%) saturate(250%) hue-rotate(85deg) brightness(55%) contrast(75%);
-  
+  filter: invert(85%) sepia(50%) saturate(250%) hue-rotate(85deg)
+    brightness(55%) contrast(75%);
 }
 
-.wave#wave1{
+.wave#wave1 {
   z-index: 1000;
   opacity: 1;
   bottom: 0;
   animation: animateWave 4s linear infinite;
 }
 
-.wave#wave2{
+.wave#wave2 {
   z-index: 999;
   opacity: 0.5;
-  bottom: 10px  ;
+  bottom: 10px;
   animation: animateWave_02 4s linear infinite;
 }
 
-.wave#wave3{
+.wave#wave3 {
   z-index: 1000;
   opacity: 0.2;
   bottom: 0;
   animation: animateWave_02 3s linear infinite;
 }
 
-.wave#wave4{
+.wave#wave4 {
   z-index: 999;
   opacity: 0.7;
-  bottom: 20px  ;
+  bottom: 20px;
   animation: animateWave_02 3s linear infinite;
 }
 
-@keyframes animateWave{
-  0%{
+@keyframes animateWave {
+  0% {
     background-position-x: 1000px;
   }
-  100%{
+  100% {
     background-position-x: 0px;
   }
 }
 
-@keyframes animateWave_02{
-  0%{
+@keyframes animateWave_02 {
+  0% {
     background-position-x: 0px;
   }
-  100%{
+  100% {
     background-position-x: 1000px;
   }
 }
@@ -334,4 +334,23 @@ img {
 
 .single-item__title {
   font-weight: 600;
+}
+
+.single-item__type {
+  font-size: 13px;
+}
+
+.single-item__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Artist */
+
+.artist {
+}
+
+.artist__title {
+  font-size: 96px;
 }
