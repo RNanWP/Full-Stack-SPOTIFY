@@ -3,13 +3,13 @@ import SingleItem from "./SingleItem";
 import { Link, useLocation } from "react-router-dom";
 
 const ItemList = ({ title, items, itemsArray, path, idPath }) => {
-  // console.log(items);
 
   const { pathname } = useLocation();
   const isHome = pathname === "/";
   const finalItems = isHome ? items : Infinity;
 
   return (
+    
     <div className="item-list">
       <div className="item-list__header">
         <h2>{title} populares</h2>

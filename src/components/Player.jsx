@@ -11,7 +11,7 @@ const Player = () => {
   return (
     <div className="player">
       <div className="player__controllers">
-        <Link to="/song1">
+        <Link to="/song/1">
           <FontAwesomeIcon className="player__icon" icon={faBackwardStep} />
         </Link>
 
