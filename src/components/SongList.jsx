@@ -4,11 +4,14 @@ import SongItem from "./SongItem";
 const SongList = ({ songsArray }) => {
   const items = 5;
   
-  const safeSongsArray = Array.isArray(songsArray) ? songsArray : [];
-  
+  if (!Array.isArray(songsArray)) {
+    return <div className="song-list">No songs available</div>;
+  }
+
+  // {songsArray
   return (
     <div className="song-list">
-      {safeSongsArray
+      {songsArray
         .filter((currentValue, index) => index < items)
         .map((currentSongObj, index) => (
           <SongItem {...currentSongObj} index={index} key={index} />

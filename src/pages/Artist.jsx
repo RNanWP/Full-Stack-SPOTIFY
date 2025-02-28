@@ -9,12 +9,12 @@ import { songsArray } from "../assets/database/songs";
 const Artist = () => {
   const { id } = useParams();
 
-  const artistObj = artistArray.filter(
+  const { name, banner } = artistArray.filter(
     (currentArtistObj) => currentArtistObj.id === Number(id)
   )[0];
 
   const songsArrayFromArtist = songsArray.filter(
-    (currentSongObj) => currentSongObj.artist === artistObj.name
+    (currentSongObj) => currentSongObj.artist === name
   );
 
   const randomIndex = Math.floor(
@@ -27,10 +27,10 @@ const Artist = () => {
       <div
         className="artist__header"
         style={{
-          backgroundImage: `linear-gradient(to bottom, var(--_shade), var(--_shade)), url(${artistObj.banner})`,
+          backgroundImage: `linear-gradient(to bottom, var(--_shade), var(--_shade)),url(${banner})`,
         }}
       >
-        <h2 className="artist__title">{artistObj.name}</h2>
+        <h2 className="artist__title">{name}</h2>
       </div>
 
       <div className="artist__body">
