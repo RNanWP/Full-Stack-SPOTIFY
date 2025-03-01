@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Artists from "./pages/Artists";
 import Artist from "./pages/Artist";
@@ -11,7 +11,17 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+      <MainContent />
+    </BrowserRouter>
+  );
+}
 
+const MainContent = () => {
+  const location = useLocation();
+  const showFooter = location.pathname === "/";
+
+  return (
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/artists" element={<Artists />} />
@@ -20,9 +30,9 @@ function App() {
         <Route path="/song/:id" element={<Song />} />
       </Routes>
 
-      <Footer />
-    </BrowserRouter>
+      {showFooter && <Footer />}
+    </>
   );
-}
+};
 
 export default App;

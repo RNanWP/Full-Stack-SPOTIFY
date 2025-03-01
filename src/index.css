@@ -349,22 +349,59 @@ img {
 /* Artist */
 
 .artist {
+  border-radius: 15px;
+  margin: 0 10px 10px;
+  /* overflow: hidden; */
+}
+
+.artist__header {
+  --_shade: hsl(0deg 0% 0% / 25%);
+
+  display: flex;
+  align-items: end;
+  padding: 25px;
+  height: 40svh;
+  background-size: cover;
+  background-position-y: 20%;
+  background-image: linear-gradient(to bottom, var(--_shade), var(--_shade)),
+    url(https://i.scdn.co/image/ab67618600001016909a162796dbc3629a1fadeb);
 }
 
 .artist__title {
   font-size: 96px;
 }
 
+.artist__body {
+  padding: 39px 25px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--green-900),
+    var(--green-950)
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
 /* SongList */
-.song-list__see-more{
+.song-list__see-more {
   font-weight: 700;
   margin-left: 25px;
   margin-top: 20px;
   cursor: pointer;
 }
 
-.song-list__see-more:hover{
+.song-list__see-more:hover {
   text-decoration: underline;
 }
 
 /* SongItem */
+.song-item {
+
+}
+
+.song-item__image{
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
