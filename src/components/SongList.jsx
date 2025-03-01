@@ -1,14 +1,10 @@
 import React from "react";
 import SongItem from "./SongItem";
 
-const SongList = ({ songsArray }) => {
-  const items = 5;
-  
-  if (!Array.isArray(songsArray)) {
-    return <div className="song-list">No songs available</div>;
-  }
+const SongList = ({ songsArray = []}) => {
+  let items = 5;
 
-  // {songsArray
+  
   return (
     <div className="song-list">
       {songsArray
@@ -17,7 +13,15 @@ const SongList = ({ songsArray }) => {
           <SongItem {...currentSongObj} index={index} key={index} />
         ))}
 
-      <p className="song-list__see-more">Ver mais</p>
+      <p
+        className="song-list__see-more"
+        onClick={() => {
+          items += 5;
+          console.log(items)
+        }}
+      >
+        Ver mais
+      </p>
     </div>
   );
 };
