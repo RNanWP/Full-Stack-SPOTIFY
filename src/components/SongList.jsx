@@ -4,8 +4,6 @@ import { useState } from "react";
 
 const SongList = ({ songsArray }) => {
   const [items, setItems] = useState(5);
-  
-  console.log("songsArray:", songsArray);
 
   return (
     <div className="song-list">
