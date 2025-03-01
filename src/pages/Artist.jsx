@@ -36,7 +36,8 @@ const Artist = () => {
       <div className="artist__body">
         <h2>Populares</h2>
 
-        <SongList {...songsArrayFromArtist} />
+   <SongList songsArray={songsArrayFromArtist} />
+
       </div>
 
       <Link to={`/song/${randomIdFromArtist}`}>
