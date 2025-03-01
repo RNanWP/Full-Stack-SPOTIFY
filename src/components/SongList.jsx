@@ -1,10 +1,10 @@
 import React from "react";
 import SongItem from "./SongItem";
+import { useState } from "react";
 
-const SongList = ({ songsArray = []}) => {
-  let items = 5;
+const SongList = ({ songsArray = [] }) => {
+  const [items, setItems] = useState(5);
 
-  
   return (
     <div className="song-list">
       {songsArray
@@ -16,8 +16,7 @@ const SongList = ({ songsArray = []}) => {
       <p
         className="song-list__see-more"
         onClick={() => {
-          items += 5;
-          console.log(items)
+          setItems(items + 5);
         }}
       >
         Ver mais

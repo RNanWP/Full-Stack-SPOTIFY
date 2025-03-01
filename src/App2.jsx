@@ -91,3 +91,6 @@
    // Permite desempacotar os elementos de um array ou as propriedades de um objeto em outro array ou objeto 
    // Permite copiar objetos, mesclar arrays ou objetos 
    // Permite espalhar os elementos de um iterável (como arrays, strings ou objetos) em outro iterável ou chamada de função 
+
+   // Quando componentes se re-renderizao?
+      // Uma das ocasioes é qunado uma variavel de estado usada po esse componente é atualizada
