@@ -9,7 +9,7 @@ const URI =
 
 const client = new MongoClient(URI);
 
-const db = client.db("Spotify");
+export const db = client.db("Spotify");
 // const songCollection = await db.collection("songs").find({}).toArray();
 
 // console.log(songCollection);
