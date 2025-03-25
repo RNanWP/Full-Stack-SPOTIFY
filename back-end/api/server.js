@@ -7,6 +7,7 @@
 
 import express from "express";
 import { artistArray } from "../../front-end/src/assets/database/artists.js";
+import { songsArray } from "../../front-end/src/assets/database/songs.js";
 
 const app = express();
 const PORT = 3003;
@@ -16,11 +17,11 @@ app.get("/", (request, response) => {
 });
 
 app.get("/artists", (request, response) => {
-  response.send("artistArray");
+  response.send(artistArray);
 });
 
 app.get("/songs", (request, response) => {
-  response.send("Olá Mundo! Agora não preciso fica atualizando!");
+  response.send(songsArray);
 });
 
 app.listen(PORT, () => {
