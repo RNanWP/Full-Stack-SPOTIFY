@@ -10,7 +10,7 @@ const Artist = () => {
   const { id } = useParams();
 
   const { name, banner } = artistArray.filter(
-    (currentArtistObj) => currentArtistObj._id === Number(id)
+    (currentArtistObj) => currentArtistObj._id === id
   )[0];
 
   const songsArrayFromArtist = songsArray.filter(
@@ -36,8 +36,7 @@ const Artist = () => {
       <div className="artist__body">
         <h2>Populares</h2>
 
-   <SongList songsArray={songsArrayFromArtist} />
-
+        <SongList songsArray={songsArrayFromArtist} />
       </div>
 
       <Link to={`/song/${randomIdFromArtist}`}>
