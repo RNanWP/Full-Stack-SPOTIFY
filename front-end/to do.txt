@@ -3,3 +3,10 @@
 - Conectas o Front com o Back
 - Lógicas do Player
 - Github e Deploy
+
+- Lógicas do Player
+
+
+- Github e Deploy
+
+Aula 4: 01:40:27

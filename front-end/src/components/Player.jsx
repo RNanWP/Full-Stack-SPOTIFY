@@ -7,7 +7,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Player = ({ duration, randomIdFromArtist, randomId2FromArtist }) => {
+const Player = ({
+  duration,
+  randomIdFromArtist,
+  randomId2FromArtist,
+  audio,
+}) => {
   return (
     <div className="player">
       <div className="player__controllers">
@@ -33,6 +38,7 @@ const Player = ({ duration, randomIdFromArtist, randomId2FromArtist }) => {
 
         <p>{duration}</p>
       </div>
+      <audio src={audio}></audio>
     </div>
   );
 };
