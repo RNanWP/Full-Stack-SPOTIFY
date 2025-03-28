@@ -537,3 +537,9 @@ img {
 .player__icon--play {
   font-size: 35px;
 }
+
+.player__progress {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
