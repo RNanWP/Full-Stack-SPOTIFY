@@ -277,7 +277,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-radius: var(--border-radius-1);
+  border-radius: var(--border-radius-l);
   align-items: center;
   transition: background-color var(--transition-function)
     var(--transition-function);
@@ -544,8 +544,16 @@ img {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 600px;
 }
 
-.player__time{
+.player__time {
   width: 45px;
+}
+
+.player__bar {
+  width: 100px;
+  height: 4px;
+  background-color: #666;
+  border-radius: var(--border-radius-s);
 }
