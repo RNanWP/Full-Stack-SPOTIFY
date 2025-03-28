@@ -29,11 +29,11 @@ const Player = ({
         </Link>
       </div>
 
-      <div className="player__player__progress">
+      <div className="player__progress">
         <p>00:00</p>
 
         <div className="player__bar">
-          <div className="player__bar-progress"></div>
+          <div className="player__progress"></div>
         </div>
 
         <p>{duration}</p>
