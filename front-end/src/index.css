@@ -22,7 +22,7 @@
 
   --border-radius-s: 5px;
   --border-radius-m: 10px;
-  --border-radius-1: 15px;
+  --border-radius-l: 15px;
 }
 
 /* Reset*/
@@ -113,7 +113,7 @@ img {
   background-color: brown;
   padding: 20px 20px 150px;
   margin: 0 10px 10px;
-  border-radius: 15px;
+  border-radius: var(--border-radius-l);
   flex: 1;
   background-image: linear-gradient(
     to bottom,
@@ -279,7 +279,7 @@ img {
   align-items: center;
   transition: background-color var(--transition-function)
     var(--transition-function);
-  border-radius: 15px;
+  border-radius: var(--border-radius-l);
   align-items: center;
 }
 
@@ -359,7 +359,7 @@ img {
 /* Artist */
 
 .artist {
-  border-radius: 15px;
+  border-radius: var(--border-radius-l);
   margin: 0 10px 10px;
   /* overflow: hidden; */
 }
@@ -368,7 +368,7 @@ img {
   --_shade: hsl(0deg 0% 0% / 25%);
 
   display: flex;
-  border-radius: 15px 0 0;
+  border-radius: var(--border-radius-l) 0 0;
   align-items: end;
   padding: 25px;
   height: 40svh;
@@ -413,7 +413,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 10px 25px;
-  border-radius: 5px;
+  border-radius: var(--border-radius-s);
   transition: background-color var(--transition-function) var(--transition-duraction);
 }
 
@@ -429,7 +429,7 @@ img {
 .song-item__image {
   width: 40px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: var(--border-radius-s);
 }
 
 .song-item__album {
@@ -493,7 +493,7 @@ img {
 
 .song__artist-image{
   justify-self: start;
-  border-radius: 5px;
+  border-radius: var(--border-radius-s);
   overflow: hidden;
 }
 
