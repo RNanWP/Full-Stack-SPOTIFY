@@ -33,7 +33,7 @@ const Player = ({
         <p>00:00</p>
 
         <div className="player__bar">
-          <div className="player__progress"></div>
+          <div className="player__bar-progress"></div>
         </div>
 
         <p>{duration}</p>

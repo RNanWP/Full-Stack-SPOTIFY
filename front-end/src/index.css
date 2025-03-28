@@ -549,11 +549,21 @@ img {
 
 .player__time {
   width: 45px;
+  text-align: center;
 }
 
 .player__bar {
-  width: 100px;
-  height: 4px;
+  flex-grow: 1;
+  height: 4px; /*Modificado*/
   background-color: #666;
   border-radius: var(--border-radius-s);
+  overflow: hidden;
+}
+
+.player__bar-progress {
+  /* --_progress: 16.967145112781957%; */
+  height: 100%;
+  width: var(--_progress);
+  background-color: white;
+  transition: width var(--transition-function) var(--transition-duraction);
 }
