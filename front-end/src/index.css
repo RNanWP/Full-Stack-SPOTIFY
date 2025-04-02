@@ -127,6 +127,12 @@ img {
   gap: 39px;
 }
 
+@media (max-width: 480px) {
+  .main {
+    padding: 12px 16px 110px ;
+  }
+}
+
 /* Footer */
 .footer {
   position: relative;
@@ -363,7 +369,6 @@ img {
     right: 15px;
     bottom: 15px;
   }
-}
 
 /* Artist */
 
@@ -577,8 +582,7 @@ img {
     height: 50px;
   }
 
-  .song__info 
-  .song__name {
+  .song__info .song__name {
     font-size: 13px;
   }
 }
