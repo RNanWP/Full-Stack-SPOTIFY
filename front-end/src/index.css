@@ -286,6 +286,11 @@ img {
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
+
+  .item-list__header{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /* SingleItem */
