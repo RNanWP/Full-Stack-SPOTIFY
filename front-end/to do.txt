@@ -10,4 +10,4 @@
 - Github e Deploy
 
 Aula 4: 01:40:27
-Aula final de CSS: 38:57
+Aula final de CSS: 46:43

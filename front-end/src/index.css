@@ -548,7 +548,7 @@ img {
   }
 
   .song__bar{
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: auto 1fr 2fr;
   }
 
   .song__info{
@@ -557,6 +557,19 @@ img {
     justify-self: start;
   }
 
+}
+
+@media (max-width: 800px) {
+  .player {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+  }
+}
+
+@media (max-width: 800px) {
+  .song__bar{
+    grid-template-columns: auto 1fr;
+  }
 }
 
 /* Player */
@@ -602,7 +615,7 @@ img {
 }
 
 .player__time {
-  width: 45px;
+  /* width: 45px; */
   text-align: center;
 }
 
