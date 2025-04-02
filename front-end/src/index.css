@@ -129,7 +129,7 @@ img {
 
 @media (max-width: 480px) {
   .main {
-    padding: 12px 16px 110px ;
+    padding: 12px 16px 110px;
   }
 }
 
@@ -276,6 +276,17 @@ img {
   text-decoration: underline;
 }
 
+@media (max-width: 480px) {
+  .item-list {
+    gap: 20px;
+  }
+
+  .item-list__container {
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
 /* SingleItem */
 
 .single-item {
@@ -370,7 +381,7 @@ img {
     bottom: 15px;
   }
 
-  .single-item{
+  .single-item {
     padding: 0;
   }
 }
