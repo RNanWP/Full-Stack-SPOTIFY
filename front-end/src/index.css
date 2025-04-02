@@ -259,8 +259,9 @@ img {
 
 .item-list__header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  line-height: 130%;
 }
 
 .item-list__container {
@@ -383,6 +384,10 @@ img {
 
   .single-item {
     padding: 0;
+  }
+
+  .single-item__texts{
+    gap: 0;
   }
 }
 
