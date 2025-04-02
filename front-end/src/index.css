@@ -577,7 +577,8 @@ img {
     height: 50px;
   }
 
-  .song__info {
+  .song__info 
+  .song__name {
     font-size: 13px;
   }
 }
