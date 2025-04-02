@@ -370,6 +370,11 @@ img {
     bottom: 15px;
   }
 
+  .single-item{
+    padding: 0;
+  }
+}
+
 /* Artist */
 
 .artist {
