@@ -7,7 +7,7 @@ import {
   faForwardStep,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const formatTime = (timeInSeconds) => {
   const minutes = Math.floor(timeInSeconds / 60)
@@ -32,8 +32,19 @@ const Player = ({
 
   const playPause = () => {
     isPlaying ? audioPlayer.current.pause() : audioPlayer.current.play();
+
     setIsPlaying(!isPlaying);
+    setCurrentTime(formatTime(audioPlayer.current.currentTime));
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (isPlaying)
+        setCurrentTime(formatTime(audioPlayer.current.currentTime));
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [isPlaying]);
 
   return (
     <div className="player">
