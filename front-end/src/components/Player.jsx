@@ -13,7 +13,7 @@ const formatTime = (timeInSeconds) => {
   const minutes = Math.flor(timeInSeconds / 60)
     .toString()
     .padStart(2, "0");
-  const seconds = Math.flot(timeInSeconds - minutes * 60)
+  const seconds = Math.flor(timeInSeconds - minutes * 60)
     .toString()
     .padStart(2, "0");
 
@@ -28,7 +28,7 @@ const Player = ({
 }) => {
   const audioPlayer = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
+  const [currentTime, setCurrentTime] = useState(formatTime(0));
 
   const playPause = () => {
     isPlaying ? audioPlayer.current.pause() : audioPlayer.current.play();
@@ -53,12 +53,13 @@ const Player = ({
       </div>
 
       <div className="player__progress">
-        <p className="player__time">00:00</p>
+        <p>{currentTime}</p>
 
         <div className="player__bar">
           <div className="player__bar-progress"></div>
         </div>
-        <p className="player__time">{duration}</p>
+
+        <p>{duration}</p>
       </div>
       <audio ref={audioPlayer} src={audio}></audio>
     </div>
