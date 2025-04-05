@@ -10,10 +10,10 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 
 const formatTime = (timeInSeconds) => {
-  const minutes = Math.flor(timeInSeconds / 60)
+  const minutes = Math.floor(timeInSeconds / 60)
     .toString()
     .padStart(2, "0");
-  const seconds = Math.flor(timeInSeconds - minutes * 60)
+  const seconds = Math.floor(timeInSeconds - minutes * 60)
     .toString()
     .padStart(2, "0");
 
