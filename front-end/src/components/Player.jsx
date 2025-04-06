@@ -81,11 +81,8 @@ const Player = ({
       <div className="player__progress">
         <p>{currentTime}</p>
 
-        <div className="player__bar" onClick={handleProgressClick}>
-          <div
-            ref={progressBar}
-            className={`player__bar-progress ${isPlaying ? "is-playing" : ""}`}
-          ></div>
+        <div className="player__bar">
+          <div ref={progressBar} className="player__bar-progress"></div>
         </div>
 
         <p>{duration}</p>

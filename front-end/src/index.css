@@ -401,14 +401,14 @@ img {
 .artist {
   border-radius: var(--border-radius-l);
   margin: 0 10px 10px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .artist__header {
   --_shade: hsl(0deg 0% 0% / 25%);
 
   display: flex;
-  border-radius: var(--border-radius-l) 0 0;
+  border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
   align-items: end;
   padding: 25px;
   height: 40svh;
@@ -416,7 +416,6 @@ img {
   background-position-y: 20%;
   background-image: linear-gradient(to bottom, var(--_shade), var(--_shade)),
     url(https://i.scdn.co/image/ab67618600001016909a162796dbc3629a1fadeb);
-  /* clip-path: inset(0 round 15px); */
 }
 
 .artist__title {
