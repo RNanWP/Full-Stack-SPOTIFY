@@ -53,10 +53,10 @@ const Player = ({
         setCurrentTime(formatTime(audioPlayer.current.currentTime));
 
       progressBar.current.style.setProperty(
-        "--progress",
+        "--_progress",
         (audioPlayer.current.currentTime / durationInSeconds) * 100 + "%"
       );
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(intervalId);
   }, [isPlaying]);
@@ -81,8 +81,11 @@ const Player = ({
       <div className="player__progress">
         <p>{currentTime}</p>
 
-        <div className="player__bar">
-          <div ref={progressBar} className="player__bar-progress"></div>
+        <div className="player__bar" onClick={handleProgressClick}>
+          <div
+            ref={progressBar}
+            className={`player__bar-progress ${isPlaying ? "is-playing" : ""}`}
+          ></div>
         </div>
 
         <p>{duration}</p>
