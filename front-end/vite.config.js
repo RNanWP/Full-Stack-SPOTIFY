@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [react()],
   esbuild: {
     target: "esnext",
-    assetsInlineLimit: 4096,
   },
   server: {
     headers: {
