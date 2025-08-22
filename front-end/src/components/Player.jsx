@@ -209,7 +209,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-// Função auxiliar para formatar o tempo de segundos para MM:SS
 const formatTime = (timeInSeconds) => {
   if (isNaN(timeInSeconds) || timeInSeconds === 0) return "00:00";
   const minutes = Math.floor(timeInSeconds / 60)
@@ -227,19 +226,16 @@ const Player = ({ randomIdFromArtist, randomId2FromArtist, audio }) => {
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0); // Estado para a duração real
+  const [duration, setDuration] = useState(0);
 
-  // Efeito principal que controla a música
   useEffect(() => {
     const audioEl = audioPlayer.current;
     if (!audioEl) return;
 
-    // Função para quando os metadados da música (incluindo duração) são carregados
     const onMetadataLoaded = () => {
       setDuration(audioEl.duration);
     };
 
-    // Função para atualizar o tempo e a barra de progresso
     const onTimeUpdate = () => {
       setCurrentTime(audioEl.currentTime);
       if (progressBar.current) {
@@ -250,22 +246,19 @@ const Player = ({ randomIdFromArtist, randomId2FromArtist, audio }) => {
       }
     };
 
-    // Adiciona os "ouvintes" de eventos
     audioEl.addEventListener("loadedmetadata", onMetadataLoaded);
     audioEl.addEventListener("timeupdate", onTimeUpdate);
 
-    // Tenta dar play automaticamente
     audioEl
       .play()
       .then(() => setIsPlaying(true))
       .catch(() => setIsPlaying(false));
 
-    // Função de limpeza: remove os "ouvintes" quando o componente é desmontado ou o áudio muda
     return () => {
       audioEl.removeEventListener("loadedmetadata", onMetadataLoaded);
       audioEl.removeEventListener("timeupdate", onTimeUpdate);
     };
-  }, [audio]); // Este efeito roda toda vez que a URL do áudio muda
+  }, [audio]);
 
   const playPause = () => {
     if (isPlaying) {

@@ -35,7 +35,7 @@ const sanitizeFilename = (name) => name.replace(/[<>:"/\\|?*]/g, "");
 // --- 2. SCRIPT DE AUTOMAÇÃO COMPLETO ---
 
 async function corrigirTudo() {
-  const musicasComErro = []; // Array para registrar as músicas que falharem
+  const musicasComErro = [];
   try {
     console.log("Iniciando a busca por músicas que precisam ser corrigidas...");
     await fsp.mkdir(PASTA_DOWNLOADS, { recursive: true });
@@ -109,7 +109,6 @@ async function corrigirTudo() {
         await fsp.unlink(caminhoFinal);
         console.log(` -> SUCESSO! Música atualizada.`);
       } catch (err) {
-        // **AQUI ESTÁ A MUDANÇA:** Registra a música com erro no array
         const erroMsg = err.stderr || err.message || "Erro desconhecido";
         console.error(` -> ERRO ao processar "${nomeCompleto}". Pulando.`);
         musicasComErro.push({ nome: nomeCompleto, erro: erroMsg });
@@ -124,7 +123,6 @@ async function corrigirTudo() {
     console.log("\n--------------------------------------------------");
     console.log("Processo de correção finalizado.");
 
-    // **RELATÓRIO FINAL:** Imprime a lista de músicas que falharam
     if (musicasComErro.length > 0) {
       console.log(
         `\n🚨 ${musicasComErro.length} MÚSICAS FALHARAM E PRECISAM DE ATENÇÃO MANUAL:`

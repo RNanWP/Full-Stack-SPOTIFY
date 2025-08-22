@@ -12,7 +12,7 @@ const Song = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setSong(null); // Limpa a música anterior para forçar recarregamento
+      setSong(null);
       const songsArray = await getSongs();
       const artistArray = await getArtists();
 
