@@ -401,7 +401,7 @@ img {
 .artist {
   border-radius: var(--border-radius-l);
   margin: 0 10px 10px;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .artist__header {

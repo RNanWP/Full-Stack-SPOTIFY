@@ -26,15 +26,21 @@ const Song = () => {
         );
 
         const songsArrayFromArtist = songsArray.filter(
-          (songObj) => songObj.artist === currentSong.artist && songObj._id !== currentSong._id
+          (songObj) =>
+            songObj.artist === currentSong.artist &&
+            songObj._id !== currentSong._id
         );
 
         if (songsArrayFromArtist.length > 0) {
-            const randomIndex = Math.floor(Math.random() * songsArrayFromArtist.length);
-            setRandomIdFromArtist(songsArrayFromArtist[randomIndex]._id);
-            
-            const randomIndex2 = Math.floor(Math.random() * songsArrayFromArtist.length);
-            setRandomId2FromArtist(songsArrayFromArtist[randomIndex2]._id);
+          const randomIndex = Math.floor(
+            Math.random() * songsArrayFromArtist.length
+          );
+          setRandomIdFromArtist(songsArrayFromArtist[randomIndex]._id);
+
+          const randomIndex2 = Math.floor(
+            Math.random() * songsArrayFromArtist.length
+          );
+          setRandomId2FromArtist(songsArrayFromArtist[randomIndex2]._id);
         }
 
         setSong(currentSong);
@@ -67,7 +73,7 @@ const Song = () => {
         </Link>
 
         <Player
-          duration={song.duration}
+          // duration={song.duration}
           randomIdFromArtist={randomIdFromArtist}
           randomId2FromArtist={randomId2FromArtist}
           audio={song.audio}
@@ -83,7 +89,6 @@ const Song = () => {
 };
 
 export default Song;
-
 
 // import React from "react";
 // import Player from "../components/Player";
