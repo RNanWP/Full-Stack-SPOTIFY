@@ -10,3 +10,7 @@ Usuario Banco de Dados Spotify: reenan92011 - jWzrQlFRG9AYarYn
       "node ScriptSongs.js"
 - Depois o Front
  - npm run dev
+
+
+
+ Melhor, como modifico minha barra de rolagem para algo mais parecido com o do spotify e ela só apareça quando eu chegar perto dela
