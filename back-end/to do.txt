@@ -6,5 +6,7 @@ Usuario Banco de Dados Spotify: reenan92011 - jWzrQlFRG9AYarYn
    "node ./api/server.js"
    - connect.js
    - inseretMany.js
+   - ScriptSongs.js
+      "node ScriptSongs.js"
 - Depois o Front
  - npm run dev
