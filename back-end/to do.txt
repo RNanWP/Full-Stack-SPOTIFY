@@ -11,6 +11,14 @@ Usuario Banco de Dados Spotify: reenan92011 - jWzrQlFRG9AYarYn
 - Depois o Front
  - npm run dev
 
+Processo de correção finalizado.
+
+🚨 4 MÚSICAS FALHARAM E PRECISAM DE ATENÇÃO MANUAL:
+- Léo Foguete - Última Noite (Motivo: Restrição de idade)
+- Léo Foguete - Última Noite - Solo (Motivo: Restrição de idade)
+- Léo Foguete - Última Noite - Solo (Motivo: Restrição de idade)
+- Léo Foguete - Última Noite (Motivo: Restrição de idade)
+
 
 
  Melhor, como modifico minha barra de rolagem para algo mais parecido com o do spotify e ela só apareça quando eu chegar perto dela

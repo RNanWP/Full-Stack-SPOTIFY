@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:3003";
+const URL = "https://spotify-backend-rnanwp.onrender.com/";
 
 export const getArtists = async () => {
   try {
@@ -8,7 +8,7 @@ export const getArtists = async () => {
     return response.data;
   } catch (error) {
     console.error("Erro ao buscar artistas:", error);
-    return []; // Retorna um array vazio em caso de erro
+    return [];
   }
 };
 
@@ -18,7 +18,7 @@ export const getSongs = async () => {
     return response.data;
   } catch (error) {
     console.error("Erro ao buscar músicas:", error);
-    return []; // Retorna um array vazio em caso de erro
+    return []; 
   }
 };
 
