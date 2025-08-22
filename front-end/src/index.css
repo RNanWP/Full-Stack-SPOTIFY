@@ -50,7 +50,7 @@ img {
 
 #root {
   font-family: "Montserrat", sans-serif;
-  min-height: 100svh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -116,6 +116,7 @@ img {
   padding: 20px 20px 150px;
   margin: 0 10px 10px;
   border-radius: var(--border-radius-l);
+  flex: 1;
   background-image: linear-gradient(
     to bottom,
     var(--green-900),
@@ -595,34 +596,8 @@ img {
 }
 
 @media (max-width: 800px) {
-  @media (max-width: 800px) {
-    .song__bar {
-      grid-template-columns: auto 1fr;
-      grid-template-rows: auto auto;
-      padding: 12px;
-      gap: 10px 15px;
-    }
-
-    .song__artist-image {
-      grid-row: 1 / span 2; 
-      width: 60px;
-      height: 60px;
-    }
-
-    .player {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .song__bar div:last-of-type {
-      grid-column: 2;
-      grid-row: 1;
-      justify-self: start;
-    }
-
-    .player__progress p {
-      display: none;
-    }
+  .song__bar {
+    grid-template-columns: auto 1fr;
   }
 }
 
@@ -704,17 +679,4 @@ img {
   .player__progress p {
     display: none;
   }
-}
-
-.content-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.content-wrapper::-webkit-scrollbar {
-  display: none;
 }
