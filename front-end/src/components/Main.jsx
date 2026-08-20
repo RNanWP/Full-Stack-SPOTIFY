@@ -10,8 +10,7 @@ const Main = ({ type }) => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const artists = await getArtists();
-      const songs = await getSongs();
+      const [artists, songs] = await Promise.all([getArtists(), getSongs()]);
       setArtistArray(artists);
       setSongsArray(songs);
       setLoading(false);
@@ -21,7 +20,16 @@ const Main = ({ type }) => {
   }, []);
 
   if (loading) {
-    return <div className="main">Carregando...</div>;
+    return <div className="main main--status">Carregando...</div>;
+  }
+
+  if (artistArray.length === 0 && songsArray.length === 0) {
+    return (
+      <div className="main main--status">
+        Não foi possível carregar os artistas e as músicas. Tente novamente em
+        instantes.
+      </div>
+    );
   }
 
   return (

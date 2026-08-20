@@ -9,12 +9,17 @@ const Song = () => {
   const [artistObj, setArtistObj] = useState(null);
   const [randomIdFromArtist, setRandomIdFromArtist] = useState(null);
   const [randomId2FromArtist, setRandomId2FromArtist] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       setSong(null);
-      const songsArray = await getSongs();
-      const artistArray = await getArtists();
+      setArtistObj(null);
+      const [songsArray, artistArray] = await Promise.all([
+        getSongs(),
+        getArtists(),
+      ]);
 
       const currentSong = songsArray.find(
         (currentSongObj) => currentSongObj._id === id
@@ -46,13 +51,19 @@ const Song = () => {
         setSong(currentSong);
         setArtistObj(currentArtist);
       }
+
+      setLoading(false);
     };
 
     fetchData();
   }, [id]);
 
-  if (!song || !artistObj) {
+  if (loading) {
     return <div className="song__container">Carregando...</div>;
+  }
+
+  if (!song || !artistObj) {
+    return <div className="song__container">Música não encontrada.</div>;
   }
 
   return (
@@ -79,7 +90,7 @@ const Song = () => {
           audio={song.audio}
         />
 
-        <div>
+        <div className="song__info">
           <p className="song__name">{song.name}</p>
           <p>{song.artist}</p>
         </div>
