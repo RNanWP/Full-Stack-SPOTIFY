@@ -8,99 +8,121 @@ import {
 import { faAddressCard } from "@fortawesome/free-solid-svg-icons/faAddressCard";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
-      <div className="waves">
-        <div className="wave" id="wave1"></div>
-        <div className="wave" id="wave2"></div>
-        <div className="wave" id="wave3"></div>
-        <div className="wave" id="wave4"></div>
+      <div className="footer__waves" aria-hidden="true">
+        <svg
+          className="footer__wave footer__wave--back"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M-80 72C103 22 290 105 475 63C655 22 828 101 1010 57C1195 13 1360 92 1520 48V120H-80Z" />
+        </svg>
+
+        <svg
+          className="footer__wave footer__wave--middle"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M-80 65C95 111 252 21 435 55C620 89 785 112 960 65C1140 17 1320 33 1520 77V120H-80Z" />
+        </svg>
+
+        <svg
+          className="footer__wave footer__wave--front"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path d="M-80 81C86 40 258 98 432 77C609 55 770 39 948 78C1125 117 1307 55 1520 70V120H-80Z" />
+        </svg>
       </div>
 
-      <ul className="social-icons">
-        <li>
-          <a
-            href="https://www.linkedin.com/in/renanodev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/RNanWP"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/_rnn.oliveira"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://rnanwp-meu-site.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faAddressCard} />
-          </a>
-        </li>
-      </ul>
+      <div className="footer__content">
+        <section className="footer__section footer__section--social">
+          <p className="footer__eyebrow">Onde me encontrar</p>
 
-      <ul className="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Time</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-
-<p className="footer-p">Copyright &#169; 2025 Renan Oliveira | All Rights Reserved.</p>
-
-{/* -------------------------------------- */}
-
-      {/* <div className="footer-container">
-        {/* Logo e Nome */}
-      {/* <div className="footer-logo">
-          <h2>Minha Empresa</h2>
-        </div> */}
-
-      {/* Links de navegação */}
-      {/* <nav className="footer-nav">
-          <ul>
-            <li><a href='#home'>Início</a></li>
-            <li><a href='#about'>Sobre</a></li>
-            <li><a href='#services'>Serviços</a></li>
-            <li><a href='#contact'>Contato</a></li>
+          <ul className="social-icons" aria-label="Redes sociais">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/renanodev"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/RNanWP"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/_rnn.oliveira"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://rnanwp-meu-site.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Portfólio"
+                title="Portfólio"
+              >
+                <FontAwesomeIcon icon={faAddressCard} />
+              </a>
+            </li>
           </ul>
-        </nav> */}
+        </section>
 
-      {/* Icones de redes sociais */}
-      {/* <div className="footer-social">
-          <a href="https://www.instagram.com/_rnn.oliveira/" target='_blank' rel='noopener noreferrer'><i className='fab fa-instagram'></i>Instagram</a>
-          <a href="/"></a>
-          <a href="/"></a>
-          <a href="https://www.linkedin.com/in/renanodev/"target='_blank' rel='noopener noreferrer'><i className='fab fa-linkedin-in'></i>LinkdIn</a>
-          <a href="https://github.com/RNanWP" target='_blank' rel='noopener noreferrer'><i className='fab fa-github'></i>GitHub</a>
-          <a href="mailto:renan92011@hotmail.com" target='_blank' rel='noopener noreferrer'><i className='fa-envelope'></i>E-mail</a>
-        </div> */}
-      {/* </div>
-        
-        {/* Direitos Autorais */}
-      {/* <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} RNanWP. Todos os direitos reservados
-        </div> */}
+        <nav
+          className="footer__section footer__navigation"
+          aria-label="Navegação do rodapé"
+        >
+          <p className="footer__eyebrow">Navegação</p>
 
-{/* -------------------------------------- */}
+          <ul className="menu">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Sobre</a>
+            </li>
+            <li>
+              <a href="#">Serviços</a>
+            </li>
+            <li>
+              <a href="#">Time</a>
+            </li>
+            <li>
+              <a href="#">Contato</a>
+            </li>
+          </ul>
+        </nav>
+
+        <section className="footer__section footer__section--copyright">
+          <p className="footer__eyebrow">Projeto pessoal</p>
+          <p className="footer-p">
+            Copyright &#169; {currentYear} Renan Oliveira
+            <span>All Rights Reserved.</span>
+          </p>
+        </section>
+      </div>
     </footer>
   );
 };
