@@ -1,5 +1,5 @@
 Video aula 4 parada em 01:29:19
-Usuario Banco de Dados Spotify: reenan92011 - jWzrQlFRG9AYarYn
+Credenciais do banco: configurar pela variável de ambiente MONGODB_URI
 
 - Primeiro roda o Back
    - Server.js

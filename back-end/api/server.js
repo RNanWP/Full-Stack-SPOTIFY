@@ -10,7 +10,7 @@ import cors from "cors";
 import { db } from "./connect.js";
 
 const app = express();
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 
 app.use(cors());
 
@@ -19,11 +19,21 @@ app.get("/", (request, response) => {
 });
 
 app.get("/artists", async (request, response) => {
-  response.send(await db.collection("artists").find({}).toArray());
+  try {
+    response.json(await db.collection("artists").find({}).toArray());
+  } catch (error) {
+    console.error("Erro ao buscar artistas:", error);
+    response.status(500).json({ error: "Não foi possível buscar os artistas." });
+  }
 });
 
 app.get("/songs", async (request, response) => {
-  response.send(await db.collection("songs").find({}).toArray());
+  try {
+    response.json(await db.collection("songs").find({}).toArray());
+  } catch (error) {
+    console.error("Erro ao buscar músicas:", error);
+    response.status(500).json({ error: "Não foi possível buscar as músicas." });
+  }
 });
 
 app.listen(PORT, () => {
