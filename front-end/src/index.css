@@ -50,7 +50,7 @@ img {
 
 #root {
   font-family: "Montserrat", sans-serif;
-  height: 100svh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -125,6 +125,12 @@ img {
   display: flex;
   flex-direction: column;
   gap: 39px;
+}
+
+.main--status {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 480px) {
@@ -589,15 +595,29 @@ img {
 }
 
 @media (max-width: 800px) {
-  .player {
-    grid-row: 2;
-    grid-column: 1 / span 2;
-  }
-}
-
-@media (max-width: 800px) {
   .song__bar {
     grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    padding: 12px;
+    gap: 10px 15px;
+  }
+
+  .song__artist-image {
+    grid-row: 1 / span 2;
+    width: 60px;
+    height: 60px;
+  }
+
+  .song__info {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    min-width: 0;
+  }
+
+  .player {
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 

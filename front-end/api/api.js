@@ -1,26 +1,37 @@
 import axios from "axios";
 
-const URL = "https://spotify-backend-rnanwp.onrender.com/";
+const URL = (
+  import.meta.env.VITE_API_URL ||
+  "https://spotify-backend-rnanwp.onrender.com"
+).replace(/\/+$/, "");
 
-export const getArtists = async () => {
-  try {
-    const response = await axios.get(`${URL}/artists`);
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao buscar artistas:", error);
-    return [];
+const api = axios.create({
+  baseURL: URL,
+  timeout: 30000,
+});
+
+const requests = new Map();
+
+const getCollection = async (collection) => {
+  if (!requests.has(collection)) {
+    const request = api
+      .get(`/${collection}`)
+      .then(({ data }) => (Array.isArray(data) ? data : []))
+      .catch((error) => {
+        requests.delete(collection);
+        console.error(`Erro ao buscar ${collection}:`, error);
+        return [];
+      });
+
+    requests.set(collection, request);
   }
+
+  return requests.get(collection);
 };
 
-export const getSongs = async () => {
-  try {
-    const response = await axios.get(`${URL}/songs`);
-    return response.data;
-  } catch (error) {
-    console.error("Erro ao buscar músicas:", error);
-    return []; 
-  }
-};
+export const getArtists = () => getCollection("artists");
+
+export const getSongs = () => getCollection("songs");
 
 // import axios from "axios";
 

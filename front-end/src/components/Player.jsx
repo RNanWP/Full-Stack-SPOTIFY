@@ -232,13 +232,18 @@ const Player = ({ randomIdFromArtist, randomId2FromArtist, audio }) => {
     const audioEl = audioPlayer.current;
     if (!audioEl) return;
 
+    setIsPlaying(false);
+    setCurrentTime(0);
+    setDuration(0);
+    progressBar.current?.style.setProperty("--_progress", "0%");
+
     const onMetadataLoaded = () => {
       setDuration(audioEl.duration);
     };
 
     const onTimeUpdate = () => {
       setCurrentTime(audioEl.currentTime);
-      if (progressBar.current) {
+      if (progressBar.current && Number.isFinite(audioEl.duration)) {
         progressBar.current.style.setProperty(
           "--_progress",
           `${(audioEl.currentTime / audioEl.duration) * 100}%`
@@ -246,8 +251,13 @@ const Player = ({ randomIdFromArtist, randomId2FromArtist, audio }) => {
       }
     };
 
+    const onEnded = () => setIsPlaying(false);
+
     audioEl.addEventListener("loadedmetadata", onMetadataLoaded);
     audioEl.addEventListener("timeupdate", onTimeUpdate);
+    audioEl.addEventListener("ended", onEnded);
+
+    audioEl.load();
 
     audioEl
       .play()
@@ -257,16 +267,22 @@ const Player = ({ randomIdFromArtist, randomId2FromArtist, audio }) => {
     return () => {
       audioEl.removeEventListener("loadedmetadata", onMetadataLoaded);
       audioEl.removeEventListener("timeupdate", onTimeUpdate);
+      audioEl.removeEventListener("ended", onEnded);
     };
   }, [audio]);
 
-  const playPause = () => {
+  const playPause = async () => {
     if (isPlaying) {
       audioPlayer.current.pause();
+      setIsPlaying(false);
     } else {
-      audioPlayer.current.play();
+      try {
+        await audioPlayer.current.play();
+        setIsPlaying(true);
+      } catch {
+        setIsPlaying(false);
+      }
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (

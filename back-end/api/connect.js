@@ -4,8 +4,11 @@
 
 import { MongoClient } from "mongodb";
 
-const URI =
-  "mongodb+srv://reenan92011:jWzrQlFRG9AYarYn@cluster0.ok7t9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const URI = process.env.MONGODB_URI;
+
+if (!URI) {
+  throw new Error("A variável de ambiente MONGODB_URI não foi configurada.");
+}
 
 const client = new MongoClient(URI);
 

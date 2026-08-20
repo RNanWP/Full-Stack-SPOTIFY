@@ -10,11 +10,12 @@ const Artist = () => {
   const [artist, setArtist] = useState(null);
   const [songsArrayFromArtist, setSongsArrayFromArtist] = useState([]);
   const [randomIdFromArtist, setRandomIdFromArtist] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const artists = await getArtists();
-      const songs = await getSongs();
+      setLoading(true);
+      const [artists, songs] = await Promise.all([getArtists(), getSongs()]);
 
       const currentArtist = artists.find(
         (currentArtistObj) => currentArtistObj._id === id
@@ -32,13 +33,19 @@ const Artist = () => {
           setRandomIdFromArtist(artistSongs[randomIndex]._id);
         }
       }
+
+      setLoading(false);
     };
 
     fetchData();
   }, [id]);
 
-  if (!artist || songsArrayFromArtist.length === 0) {
-    return <div className="main">Carregando...</div>;
+  if (loading) {
+    return <div className="main main--status">Carregando...</div>;
+  }
+
+  if (!artist) {
+    return <div className="main main--status">Artista não encontrado.</div>;
   }
 
   return (
@@ -54,15 +61,21 @@ const Artist = () => {
 
       <div className="artist__body">
         <h2>Populares</h2>
-        <SongList songsArray={songsArrayFromArtist} />
+        {songsArrayFromArtist.length > 0 ? (
+          <SongList songsArray={songsArrayFromArtist} />
+        ) : (
+          <p>Nenhuma música encontrada para este artista.</p>
+        )}
       </div>
 
-      <Link to={`/song/${randomIdFromArtist}`}>
-        <FontAwesomeIcon
-          className="single-item__icon single-item__icon--artist"
-          icon={faCirclePlay}
-        />
-      </Link>
+      {randomIdFromArtist && (
+        <Link to={`/song/${randomIdFromArtist}`}>
+          <FontAwesomeIcon
+            className="single-item__icon single-item__icon--artist"
+            icon={faCirclePlay}
+          />
+        </Link>
+      )}
     </div>
   );
 };
